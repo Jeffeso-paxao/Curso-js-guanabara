@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Formulário</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      input {
+        margin-top: 20px;
+        width: 80%;
+      }
+      button {
+        margin-top: 20px;
+      }
+      div {
+        margin-top: 16px;
+      }
+      strong {
+        font: normal 18pt Arial;
+        margin-top: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Formulário de alunos</h1>
+    <strong>Nome completo<br /></strong>
+    <input type="text" name="nome" id="nome" /><br />
+    <strong>Idade<br /></strong>
+    <input type="number" name="idade" id="idade" /><br />
+    <strong>Endereço</strong><br /><input
+      type="text"
+      name="end"
+      id="end"
+    /><br />
+    <button type="submit" onclick="dadosAlunos()">Verificar Dados</button>
+    <button type="submit">Enviar dados</button>
+    <div id="confirmarDados">Dados estão corretos?</div>
+
+    <script>
+      function dadosAlunos() {
+        var age = document.querySelector("input#idade");
+        var name = document.querySelector("input#nome");
+        var adress = document.querySelector("input#end");
+        var confirm = document.querySelector("div#confirmarDados");
+
+        confirm.innerHTML = `Seu nome é ${name.value}, você tem ${age.value} anos de idade e é residente no endereço ${adress.value}. Se seus dados estiverem <strong>corretos</strong> clique em Enviar dados.`;
+      }
+    </script>
+  </body>
+</html>
